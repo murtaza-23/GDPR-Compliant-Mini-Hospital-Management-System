@@ -67,6 +67,7 @@ def init_db():
             );
         """)
 
+        # user seeding
         default_users = [
             (1, "admin", hash_password("admin123"), "admin"),
             (2, "Dr. Bob", hash_password("doc123"), "doctor"),
