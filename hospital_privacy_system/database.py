@@ -1,9 +1,7 @@
 import sqlite3
 import hashlib
 import csv
-import os
 import io
-from datetime import datetime, timedelta
 
 DB_NAME = "hospital.db"
 
@@ -90,7 +88,7 @@ def init_db():
         if conn:
             conn.close()
 
-# Exports a valid table ('patients' or 'logs') to a CSV string for backup/download.
+# Exports a valid table ('patients' or 'logs') to a CSV string for backup/download
 def export_table_to_csv(table_name: str) -> str:
     # Security check: prevent SQL injection since table names cannot be parameterized
     if table_name not in ("patients", "logs"):
